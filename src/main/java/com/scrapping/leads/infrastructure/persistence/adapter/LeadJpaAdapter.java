@@ -44,12 +44,12 @@ public class LeadJpaAdapter implements LeadRepository {
 
     @Override
     public boolean findByLinkedInUrl(LinkedInUrl linkedInUrl) {
-        return leadJpaRepository.existsByLinkedInUrl(linkedInUrl.value());
+        return leadJpaRepository.existsByLinkedInUrlAndIsActiveTrue(linkedInUrl.value());
     }
 
     @Override
     public List<Lead> findAllLeads() {
-        return leadJpaRepository.findAll()
+        return leadJpaRepository.findAllByIsActiveTrue()
                 .stream()
                 .map(LeadMapper::toDomain)
                 .toList();

@@ -14,6 +14,9 @@ public class LeadJPAEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(name = "is_active")
+    private boolean isActive = true;
+
     private String firstName;
     private String lastName;
     private String email;
@@ -142,5 +145,13 @@ public class LeadJPAEntity {
 
     public void setCollectedAt(LocalDateTime collectedAt) {
         this.collectedAt = collectedAt;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }
