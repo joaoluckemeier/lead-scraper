@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/leadgen
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  flyway:
+    enabled: true
+
+apify:
+  api-key: ${APIFY_API_KEY}
+  actor-id: apimaestro/linkedin-profile-search-scraper
+
+scraper:
+  trigger: MANUAL
+  schedule: "0 0 8 * * MON"
+
+server:
+  port: 8081

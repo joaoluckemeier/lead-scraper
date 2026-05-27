@@ -1,0 +1,6 @@
+ALTER TABLE leads DROP COLUMN current_company;
+ALTER TABLE leads DROP COLUMN city;
+ALTER TABLE leads DROP COLUMN state;
+ALTER TABLE leads DROP COLUMN country;
+ALTER TABLE leads DROP COLUMN source;
+ALTER TABLE leads DROP COLUMN skills;
