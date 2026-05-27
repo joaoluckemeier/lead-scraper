@@ -1,0 +1,1 @@
+ALTER TABLE companies ADD COLUMN location_id UUID REFERENCES locations(id);
